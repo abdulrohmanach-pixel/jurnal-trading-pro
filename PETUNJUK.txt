@@ -1,0 +1,14 @@
+JURNAL TRADING PRO — PWA ANDROID
+
+Isi:
+- index.html: aplikasi
+- manifest.webmanifest: identitas instalasi
+- sw.js: cache/offline
+- icon.svg: ikon aplikasi
+
+PENTING:
+1. Agar bisa dipasang sebagai aplikasi PWA, file harus dihosting pada alamat HTTPS. Membuka index.html langsung dari folder HP tidak mengaktifkan service worker atau instalasi PWA.
+2. Setelah dihosting, buka URL di Chrome Android > menu ⋮ > "Install app" atau "Tambahkan ke layar utama" (nama menu bisa berbeda).
+3. Data trade disimpan di IndexedDB dan juga dicadangkan ke localStorage. Ekspor backup JSON berkala tetap wajib karena data lokal tidak sama dengan backup cloud.
+4. Jangan menghapus data situs/browser sebelum mengekspor backup.
+5. Untuk memulihkan backup: buka aplikasi > Data & Pengaturan > pilih file backup JSON.

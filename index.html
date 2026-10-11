@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jurnal Trading Pro">
+<title>Jurnal Trading Pro</title>
+<style>
+:root{--bg:#080c17;--panel:#11182a;--panel2:#151f34;--line:#27334b;--text:#eef3ff;--muted:#9ba9c4;--gold:#f5c451;--green:#42d39a;--red:#ff7185;--blue:#70b7ff;--purple:#c09aff;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 90% -10%,#1b2a4a 0%,transparent 60%),var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.app{max-width:1180px;margin:auto;padding:16px 14px 40px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#ffe18b,#dc9e20);display:grid;place-items:center;color:#111827;font-size:23px;font-weight:900;box-shadow:0 8px 25px #f5c45125}.brand h1{font-size:19px;margin:0;letter-spacing:.2px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#19243a;color:var(--text);padding:10px 13px;border-radius:12px;font-weight:700;font-size:13px}.btn.primary{background:var(--gold);color:#171717;border-color:var(--gold)}.btn.danger{color:#ffc0c9;border-color:#693140;background:#2b1825}.btn.small{padding:7px 10px;font-size:12px}.hero{padding:22px;border:1px solid #34405a;border-radius:24px;background:linear-gradient(120deg,#17243a,#11182a 55%,#2a241a);position:relative;overflow:hidden;margin-bottom:16px}.hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#f5c45110;right:-50px;top:-60px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:1.6px;font-weight:900;text-transform:uppercase}.hero h2{font-size:clamp(23px,5vw,34px);line-height:1.12;margin:8px 0}.hero p{color:#bdc8dc;margin:8px 0 0;max-width:680px}.quote{font-weight:900;color:var(--gold);margin-top:14px;letter-spacing:.3px}.nav{display:flex;gap:7px;overflow-x:auto;padding:4px 1px 12px;margin-bottom:8px;scrollbar-width:thin}.nav button{white-space:nowrap;border:1px solid var(--line);background:#101729;color:var(--muted);padding:10px 14px;border-radius:12px;font-weight:800}.nav button.active{background:var(--gold);color:#171717;border-color:var(--gold)}.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{background:linear-gradient(180deg,#141d30,#101727);border:1px solid var(--line);border-radius:var(--radius);padding:16px;min-width:0}.stat-label{color:var(--muted);font-size:12px;font-weight:700}.stat-value{font-size:clamp(20px,3vw,27px);font-weight:900;margin:7px 0 3px;overflow-wrap:anywhere}.stat-sub{font-size:11px;color:var(--muted)}.green{color:var(--green)!important}.red{color:var(--red)!important}.gold{color:var(--gold)!important}.blue{color:var(--blue)!important}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0 10px}.section-head h3{font-size:17px;margin:0}.section-head p{margin:3px 0 0;color:var(--muted);font-size:12px}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}.muted{color:var(--muted)}.empty{padding:24px 12px;text-align:center;color:var(--muted);border:1px dashed #35425b;border-radius:14px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#bdc8dc;font-weight:800}.field input,.field select,.field textarea,.filters input,.filters select{width:100%;min-width:0;background:#0b1221;color:var(--text);border:1px solid #33405a;border-radius:11px;padding:11px 12px}.field textarea{min-height:84px;resize:vertical}.hint{font-size:11px;color:var(--muted)}.form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.form-note{font-size:12px;color:var(--muted);margin-top:10px}.filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:750px;background:#0e1525}th,td{text-align:left;padding:12px 11px;border-bottom:1px solid #222e44;font-size:12px;white-space:nowrap}th{color:#aebbd3;background:#151f33;font-size:11px;text-transform:uppercase;letter-spacing:.5px}tbody tr:last-child td{border-bottom:0}td.notes{white-space:normal;min-width:160px;max-width:240px}.pill{display:inline-flex;align-items:center;padding:4px 8px;border-radius:99px;font-size:10px;font-weight:900;background:#202b40;color:#b9c6dd}.pill.win{background:#103a31;color:#6de2b7}.pill.loss{background:#401e2a;color:#ff9eac}.pill.be{background:#332b16;color:#f7d875}.chart{height:190px;width:100%;display:block}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted)}.legend span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:3px;background:var(--gold);margin-right:5px}.checklist{display:grid;gap:9px}.checkitem{display:flex;align-items:flex-start;gap:10px;background:#0e1525;border:1px solid #26334a;border-radius:12px;padding:11px}.checkitem input{accent-color:var(--gold);margin-top:3px;width:17px;height:17px;flex-shrink:0}.checkitem strong{display:block;font-size:13px}.checkitem small{display:block;color:var(--muted);margin-top:3px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#f5c451;color:#111827;padding:12px 17px;border-radius:12px;font-weight:900;font-size:13px;box-shadow:0 12px 40px #0008;opacity:0;pointer-events:none;transition:.2s;z-index:99;max-width:calc(100% - 28px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.modal-backdrop{position:fixed;inset:0;background:#02040acc;display:none;align-items:center;justify-content:center;padding:14px;z-index:80}.modal-backdrop.show{display:flex}.modal{background:#111a2c;border:1px solid #36425b;border-radius:20px;padding:18px;width:min(650px,100%);max-height:92vh;overflow:auto}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.modal-head h3{margin:0}.close{font-size:22px;padding:4px 9px}.footer{margin-top:20px;color:var(--muted);font-size:11px;text-align:center}.danger-text{color:#ffb1bd}.divider{height:1px;background:var(--line);margin:15px 0}.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mini{padding:12px;background:#0d1423;border:1px solid #27334a;border-radius:12px}.mini b{display:block;font-size:18px;margin-top:4px}.mini span{color:var(--muted);font-size:11px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:18px}.topbar{align-items:flex-start}.top-actions .btn{padding:9px 10px}.app{padding:12px 10px 32px}}
+@media(max-width:420px){.brand h1{font-size:16px}.brand p{font-size:10px}.logo{width:39px;height:39px}.top-actions{max-width:135px}.top-actions .btn{font-size:11px;padding:8px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.card{padding:13px}.stat-value{font-size:21px}.hero h2{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="logo">↗</div><div><h1>JURNAL TRADING PRO</h1><p>Bangun proses. Ukur hasil. Jaga modal.</p></div></div>
+    <div class="top-actions">
+      <button class="btn" id="exportBtn">Ekspor</button>
+      <button class="btn primary" id="quickAddBtn">+ Catat trade</button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">Trading performance workspace</div>
+    <h2>BUILDING MY FUTURE.<br><span class="gold">NO RUSH, JUST PROGRESS.</span></h2>
+    <p>Catat keputusan, evaluasi strategi, dan jadikan data sebagai dasar perbaikan. Profit bukan satu-satunya ukuran keberhasilan.</p>
+    <div class="quote">KITA KEJAR PROSESNYA, BUKAN FOMO-NYA!</div>
+  </section>
+  <nav class="nav" aria-label="Navigasi utama">
+    <button class="active" data-view="dashboard">Dashboard</button><button data-view="trades">Riwayat Trade</button><button data-view="add">Tambah Trade</button><button data-view="analytics">Analisis</button><button data-view="checklist">Checklist</button><button data-view="settings">Data & Pengaturan</button>
+  </nav>
+
+  <main>
+    <section class="view active" id="view-dashboard">
+      <div class="grid">
+        <div class="card"><div class="stat-label">NET P/L</div><div class="stat-value" id="statNet">Rp0</div><div class="stat-sub">Total hasil trade tersimpan</div></div>
+        <div class="card"><div class="stat-label">WIN RATE</div><div class="stat-value" id="statWin">0%</div><div class="stat-sub" id="statWinSub">0 trade selesai</div></div>
+        <div class="card"><div class="stat-label">JUMLAH TRADE</div><div class="stat-value" id="statCount">0</div><div class="stat-sub">Termasuk trade BE</div></div>
+        <div class="card"><div class="stat-label">PROFIT FACTOR</div><div class="stat-value" id="statPF">—</div><div class="stat-sub">Gross profit ÷ gross loss</div></div>
+      </div>
+      <div class="section-head"><div><h3>Ringkasan performa</h3><p>Berubah otomatis saat data trade diperbarui.</p></div></div>
+      <div class="two-col">
+        <div class="card"><h3 style="margin:0 0 5px;font-size:15px">Kurva ekuitas kumulatif</h3><p class="muted" style="font-size:12px;margin:0 0 8px">Berdasarkan urutan tanggal dan P/L yang dicatat.</p><canvas id="equityChart" class="chart" aria-label="Grafik ekuitas"></canvas><div class="legend"><span>Akumulasi P/L</span></div></div>
+        <div class="card"><h3 style="margin:0 0 12px;font-size:15px">Statistik penting</h3><div class="mini-grid">
+          <div class="mini"><span>Gross profit</span><b class="green" id="grossProfit">Rp0</b></div><div class="mini"><span>Gross loss</span><b class="red" id="grossLoss">Rp0</b></div>
+          <div class="mini"><span>Rata-rata P/L</span><b id="avgPL">Rp0</b></div><div class="mini"><span>Rata-rata R</span><b id="avgR">—</b></div>
+          <div class="mini"><span>Trade terbaik</span><b class="green" id="bestTrade">Rp0</b></div><div class="mini"><span>Trade terburuk</span><b class="red" id="worstTrade">Rp0</b></div>
+        </div></div>
+      </div>
+      <div class="section-head"><div><h3>Trade terbaru</h3><p>Periksa apakah catatan dan alasan entry sudah lengkap.</p></div><button class="btn small" data-goto="trades">Lihat semua</button></div>
+      <div id="recentTrades"></div>
+      <div class="section-head"><div><h3>Pengingat disiplin</h3></div></div>
+      <div class="card"><div class="checklist">
+        <div class="checkitem"><span>🛡️</span><div><strong>Lindungi modal lebih penting daripada mengejar profit.</strong><small>Jangan gunakan uang sekolah, kebutuhan hidup, atau uang keluarga untuk trading.</small></div></div>
+        <div class="checkitem"><span>📈</span><div><strong>Disiplin lebih penting daripada terburu-buru.</strong><small>Tidak ada kewajiban untuk entry setiap hari. Menunggu juga keputusan.</small></div></div>
+        <div class="checkitem"><span>🧠</span><div><strong>Konsistensi belajar lebih penting daripada hasil sesaat.</strong><small>Evaluasi sampel trade yang memadai, bukan satu atau dua hasil.</small></div></div>
+      </div></div>
+    </section>
+
+    <section class="view" id="view-trades">
+      <div class="section-head"><div><h3>Riwayat trade</h3><p>Gunakan filter untuk mencari trade berdasarkan instrumen, hasil, atau tanggal.</p></div><button class="btn primary" data-goto="add">+ Trade baru</button></div>
+      <div class="filters">
+        <input id="filterSearch" placeholder="Cari simbol / strategi" aria-label="Cari trade">
+        <select id="filterResult" aria-label="Filter hasil"><option value="">Semua hasil</option><option value="win">Win</option><option value="loss">Loss</option><option value="be">Break-even</option></select>
+        <input id="filterFrom" type="date" aria-label="Dari tanggal">
+        <input id="filterTo" type="date" aria-label="Sampai tanggal">
+      </div>
+      <div id="tradeTable"></div>
+    </section>
+
+    <section class="view" id="view-add">
+      <div class="section-head"><div><h3 id="formTitle">Catat trade baru</h3><p>Isi data inti dulu. Kolom opsional bisa dilengkapi saat evaluasi.</p></div></div>
+      <div class="card">
+        <form id="tradeForm">
+          <input type="hidden" id="editId">
+          <div class="form-grid">
+            <div class="field"><label for="date">Tanggal *</label><input id="date" type="date" required></div>
+            <div class="field"><label for="symbol">Instrumen *</label><input id="symbol" value="XAUUSD" maxlength="20" required placeholder="Contoh: XAUUSD"></div>
+            <div class="field"><label for="direction">Arah posisi *</label><select id="direction" required><option value="Buy">Buy / Long</option><option value="Sell">Sell / Short</option></select></div>
+            <div class="field"><label for="session">Sesi pasar</label><select id="session"><option value="">Pilih sesi</option><option>Asia</option><option>London</option><option>New York</option><option>Overlap London–New York</option><option>Lainnya</option></select></div>
+            <div class="field"><label for="entry">Harga entry</label><input id="entry" type="number" step="any" placeholder="Contoh: 2650.50"></div>
+            <div class="field"><label for="exit">Harga exit</label><input id="exit" type="number" step="any" placeholder="Contoh: 2660.50"></div>
+            <div class="field"><label for="sl">Stop-loss (harga)</label><input id="sl" type="number" step="any" placeholder="Harga SL"></div>
+            <div class="field"><label for="tp">Take-profit (harga)</label><input id="tp" type="number" step="any" placeholder="Harga TP"></div>
+            <div class="field"><label for="lot">Lot / ukuran posisi</label><input id="lot" type="number" min="0" step="any" placeholder="Contoh: 0.01"></div>
+            <div class="field"><label for="risk">Risiko rencana (mata uang akun)</label><input id="risk" type="number" min="0" step="any" placeholder="Nominal risiko sebelum entry"></div>
+            <div class="field"><label for="pl">Hasil bersih P/L (mata uang akun) *</label><input id="pl" type="number" step="any" required placeholder="Contoh profit 50000, loss -25000"></div>
+            <div class="field"><label for="fees">Komisi / biaya (opsional)</label><input id="fees" type="number" min="0" step="any" placeholder="Biaya yang sudah termasuk / belum? lihat catatan"></div>
+            <div class="field"><label for="strategy">Strategi / setup</label><input id="strategy" maxlength="80" placeholder="Contoh: pullback + konfirmasi M15"></div>
+            <div class="field"><label for="timeframe">Timeframe entry</label><select id="timeframe"><option value="">Pilih timeframe</option><option>M1</option><option>M5</option><option>M15</option><option>M30</option><option>H1</option><option>H4</option><option>D1</option><option>Lainnya</option></select></div>
+            <div class="field"><label for="emotion">Kondisi emosi</label><select id="emotion"><option value="">Pilih kondisi</option><option>Tenang dan fokus</option><option>Ragu-ragu</option><option>FOMO</option><option>Balas dendam / revenge trade</option><option>Takut ketinggalan</option><option>Lelah / terdistraksi</option></select></div>
+            <div class="field"><label for="rule">Patuh rencana?</label><select id="rule"><option value="">Pilih</option><option value="yes">Ya</option><option value="no">Tidak</option><option value="partial">Sebagian</option></select></div>
+            <div class="field"><label for="news">Kondisi berita</label><select id="news"><option value="">Pilih</option><option>Tidak ada berita penting</option><option>Menjelang berita</option><option>Sesudah berita</option><option>Entry saat berita</option><option>Tidak tahu</option></select></div>
+            <div class="field full"><label for="reason">Alasan entry *</label><textarea id="reason" required placeholder="Apa konfirmasi entry? Struktur pasar, level, setup, dan kondisi yang mendukung."></textarea></div>
+            <div class="field full"><label for="review">Evaluasi setelah trade</label><textarea id="review" placeholder="Apa yang berjalan baik? Apa yang salah? Apa yang akan dilakukan berbeda?"></textarea></div>
+            <div class="field full"><label for="tags">Tag (pisahkan dengan koma)</label><input id="tags" placeholder="Contoh: breakout, news, disiplin"></div>
+          </div>
+          <div class="form-actions"><button class="btn primary" type="submit" id="saveTradeBtn">Simpan trade</button><button class="btn" type="button" id="resetFormBtn">Kosongkan form</button><button class="btn" type="button" id="cancelEditBtn" style="display:none">Batal edit</button></div>
+          <p class="form-note">P/L wajib diisi sebagai hasil bersih. Jika biaya belum dikurangi dari P/L, kurangi secara konsisten sebelum menyimpan agar statistik tidak menyesatkan. Aplikasi tidak menghitung otomatis profit dari harga/lot karena spesifikasi kontrak dan mata uang akun berbeda antarbroker.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="view-analytics">
+      <div class="section-head"><div><h3>Analisis performa</h3><p>Statistik dihitung dari trade yang tercatat, bukan prediksi hasil masa depan.</p></div></div>
+      <div class="grid">
+        <div class="card"><div class="stat-label">WIN</div><div class="stat-value green" id="aWins">0</div><div class="stat-sub">Trade dengan P/L positif</div></div>
+        <div class="card"><div class="stat-label">LOSS</div><div class="stat-value red" id="aLosses">0</div><div class="stat-sub">Trade dengan P/L negatif</div></div>
+        <div class="card"><div class="stat-label">BREAK-EVEN</div><div class="stat-value gold" id="aBE">0</div><div class="stat-sub">P/L nol</div></div>
+        <div class="card"><div class="stat-label">EXPECTANCY</div><div class="stat-value" id="aExp">Rp0</div><div class="stat-sub">Rata-rata P/L per trade</div></div>
+      </div>
+      <div class="two-col" style="margin-top:12px">
+        <div class="card"><h3 style="font-size:15px;margin:0 0 12px">Per instrumen</h3><div id="symbolStats"></div></div>
+        <div class="card"><h3 style="font-size:15px;margin:0 0 12px">Per strategi</h3><div id="strategyStats"></div></div>
+      </div>
+      <div class="card" style="margin-top:12px"><h3 style="font-size:15px;margin:0 0 8px">Cara membaca statistik</h3><ul class="muted" style="padding-left:20px;margin:0;font-size:13px"><li><b>Win rate</b> adalah persentase trade dengan P/L positif; angka tinggi saja tidak membuktikan strategi bagus.</li><li><b>Profit factor</b> adalah gross profit dibagi nilai absolut gross loss. Jika belum ada loss, hasil ditampilkan sebagai —.</li><li><b>Expectancy</b> adalah rata-rata P/L per trade. Nilai positif pada sampel kecil belum menjamin hasil ke depan.</li><li><b>Average R</b> hanya dihitung untuk trade yang memiliki risiko rencana lebih dari nol, dengan R = P/L ÷ risiko rencana.</li></ul></div>
+    </section>
+
+    <section class="view" id="view-checklist">
+      <div class="section-head"><div><h3>Checklist sebelum & sesudah trading</h3><p>Centang sesuai kondisi hari ini. Status checklist disimpan di perangkat ini.</p></div><button class="btn small" id="clearChecksBtn">Reset checklist</button></div>
+      <div class="two-col">
+        <div class="card"><h3 style="margin:0 0 12px;font-size:15px">Sebelum entry</h3><div class="checklist" id="preChecks"></div></div>
+        <div class="card"><h3 style="margin:0 0 12px;font-size:15px">Sesudah trade / akhir sesi</h3><div class="checklist" id="postChecks"></div></div>
+      </div>
+      <div class="card" style="margin-top:12px"><h3 style="margin:0 0 8px;font-size:15px">Aturan pribadi</h3><p class="muted" style="font-size:12px;margin:0 0 10px">Contoh: berhenti setelah menyentuh batas rugi harian yang sudah ditentukan. Ini pengingat, bukan saran untuk mengambil risiko tertentu.</p><textarea id="personalRules" style="width:100%;min-height:100px;background:#0b1221;color:var(--text);border:1px solid #33405a;border-radius:11px;padding:12px" placeholder="Tulis aturan yang wajib gua patuhi..."></textarea><div class="form-actions"><button class="btn primary" id="saveRulesBtn">Simpan aturan</button></div></div>
+    </section>
+
+    <section class="view" id="view-settings">
+      <div class="section-head"><div><h3>Data & pengaturan</h3><p>Data disimpan lokal di browser perangkat ini. Backup rutin sangat disarankan.</p></div></div>
+      <div class="two-col">
+        <div class="card"><h3 style="margin:0 0 8px;font-size:15px">Backup & pemulihan</h3><p class="muted" style="font-size:12px">Ekspor backup JSON untuk menyimpan semua trade dan checklist. File CSV cocok untuk membuka riwayat trade di spreadsheet.</p><div class="form-actions"><button class="btn primary" id="backupBtn">Unduh backup JSON</button><button class="btn" id="csvBtn">Unduh trade CSV</button></div><div class="divider"></div><label class="field"><span style="font-size:12px;font-weight:800">Pulihkan backup JSON</span><input type="file" id="importFile" accept=".json,application/json"></label><p class="hint">Mengimpor backup akan mengganti data yang ada. Ekspor dulu data saat ini jika ingin menyimpannya.</p></div>
+        <div class="card"><h3 style="margin:0 0 8px;font-size:15px">Preferensi</h3><div class="field"><label for="currency">Mata uang P/L</label><select id="currency"><option value="IDR">IDR — Rupiah</option><option value="USD">USD — Dolar AS</option><option value="MYR">MYR — Ringgit</option><option value="SGD">SGD — Dolar Singapura</option><option value="EUR">EUR — Euro</option></select></div><div class="form-actions"><button class="btn primary" id="saveCurrencyBtn">Simpan mata uang</button></div><div class="divider"></div><p class="muted" style="font-size:12px">Mata uang hanya mengubah format tampilan, tidak mengonversi nilai. Pastikan semua P/L yang dicatat menggunakan mata uang yang sama.</p></div>
+      </div>
+      <div class="card" style="margin-top:12px"><h3 style="margin:0 0 8px;font-size:15px">Privasi dan penyimpanan</h3><p class="muted" style="font-size:12px">Aplikasi ini berjalan tanpa akun dan tanpa server. Data berada di penyimpanan lokal browser. Jika data browser dihapus, mode incognito digunakan, atau aplikasi dibuka di browser/perangkat lain, data mungkin tidak tersedia. Simpan backup JSON secara berkala.</p><div class="form-actions"><button class="btn danger" id="clearDataBtn">Hapus semua data</button></div></div>
+    </section>
+  </main>
+  <div class="footer">Jurnal Trading Pro • Gunakan data untuk evaluasi, bukan untuk menjamin profit. Trading memiliki risiko kehilangan modal.</div>
+</div>
+
+<div class="modal-backdrop" id="detailBackdrop" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal"><div class="modal-head"><h3 id="detailTitle">Detail trade</h3><button class="btn close" id="closeDetailBtn" aria-label="Tutup">×</button></div><div id="detailContent"></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+'use strict';
+const STORAGE_KEY='jurnalTradingPro_v2';
+const CHECK_KEY='jurnalTradingPro_checks_v2';
+const RULE_KEY='jurnalTradingPro_rules_v2';
+const PREF_KEY='jurnalTradingPro_pref_v2';
+let trades=[];
+let currency='IDR';
+let editingId=null;
+let toastTimer=null;
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=v=>{const n=Number(v);return Number.isFinite(n)?n:0};
+function money(v){try{return new Intl.NumberFormat('id-ID',{style:'currency',currency:currency,maximumFractionDigits:currency==='IDR'?0:2}).format(num(v))}catch(e){return (currency+' '+num(v).toFixed(2))}}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
+let tradeDBPromise=null;
+function openTradeDB(){
+  if(!('indexedDB' in window)) return Promise.resolve(null);
+  if(!tradeDBPromise) tradeDBPromise=new Promise(resolve=>{
+    const req=indexedDB.open('JurnalTradingProDB',1);
+    req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('appdata'))db.createObjectStore('appdata')};
+    req.onsuccess=()=>resolve(req.result);
+    req.onerror=()=>resolve(null);
+  });
+  return tradeDBPromise;
+}
+async function idbGetTrades(){
+  const db=await openTradeDB();if(!db)return null;
+  return new Promise(resolve=>{try{const req=db.transaction('appdata','readonly').objectStore('appdata').get('trades');req.onsuccess=()=>resolve(Array.isArray(req.result)?req.result:null);req.onerror=()=>resolve(null)}catch(e){resolve(null)}});
+}
+async function idbSaveTrades(){
+  const db=await openTradeDB();if(!db)return false;
+  return new Promise(resolve=>{try{const tx=db.transaction('appdata','readwrite');tx.objectStore('appdata').put(trades,'trades');tx.oncomplete=()=>resolve(true);tx.onerror=()=>resolve(false);tx.onabort=()=>resolve(false)}catch(e){resolve(false)}});
+}
+function save(){
+  let ok=true;
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(trades))}catch(e){ok=false}
+  idbSaveTrades().then(saved=>{if(!saved&&!ok)showToast('Penyimpanan gagal. Ekspor backup JSON sekarang.')});
+  if(!ok)showToast('Penyimpanan browser terbatas. Ekspor backup JSON sekarang.');
+  return ok;
+}
+async function load(){
+  try{const d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');trades=Array.isArray(d)?d.filter(x=>x&&x.id):[]}catch(e){trades=[]}
+  const dbTrades=await idbGetTrades();
+  if(dbTrades && dbTrades.length){trades=dbTrades;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(trades))}catch(e){}}
+  else if(trades.length){idbSaveTrades();}
+  try{const p=JSON.parse(localStorage.getItem(PREF_KEY)||'{}');if(p.currency)currency=p.currency}catch(e){}
+  $('currency').value=currency;
+}
+function switchView(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));document.querySelectorAll('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));if(name==='add'&&!editingId&& !$('date').value)$('date').value=today();if(name==='dashboard')drawChart();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.nav button[data-view]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.goto)));
+$('quickAddBtn').addEventListener('click',()=>{resetForm();switchView('add')});
+$('exportBtn').addEventListener('click',exportBackup);
+$('backupBtn').addEventListener('click',exportBackup);
+$('csvBtn').addEventListener('click',exportCSV);
+$('saveCurrencyBtn').addEventListener('click',()=>{currency=$('currency').value;localStorage.setItem(PREF_KEY,JSON.stringify({currency}));renderAll();showToast('Preferensi mata uang disimpan')});
+function formData(){return {date:$('date').value,symbol:$('symbol').value.trim().toUpperCase(),direction:$('direction').value,session:$('session').value,entry:nullableNumber('entry'),exit:nullableNumber('exit'),sl:nullableNumber('sl'),tp:nullableNumber('tp'),lot:nullableNumber('lot'),risk:nullableNumber('risk'),pl:num($('pl').value),fees:nullableNumber('fees'),strategy:$('strategy').value.trim(),timeframe:$('timeframe').value,emotion:$('emotion').value,rule:$('rule').value,news:$('news').value,reason:$('reason').value.trim(),review:$('review').value.trim(),tags:$('tags').value.split(',').map(x=>x.trim()).filter(Boolean)}}
+function nullableNumber(id){const v=$(id).value;return v===''?null:num(v)}
+$('tradeForm').addEventListener('submit',e=>{e.preventDefault();const d=formData();if(!d.date||!d.symbol||!d.reason||$('pl').value===''){showToast('Lengkapi tanggal, instrumen, P/L, dan alasan entry.');return}
+if(editingId){const i=trades.findIndex(t=>t.id===editingId);if(i>=0)trades[i]={...trades[i],...d,updatedAt:new Date().toISOString()};showToast('Trade berhasil diperbarui')}else{trades.push({...d,id:makeId(),createdAt:new Date().toISOString()});showToast('Trade berhasil disimpan')}
+save();resetForm();renderAll();switchView('trades')});
+function makeId(){return 't'+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function resetForm(){editingId=null;$('tradeForm').reset();$('date').value=today();$('symbol').value='XAUUSD';$('direction').value='Buy';$('formTitle').textContent='Catat trade baru';$('saveTradeBtn').textContent='Simpan trade';$('cancelEditBtn').style.display='none';$('editId').value=''}
+$('resetFormBtn').addEventListener('click',()=>{if(editingId){resetForm()}else{$('tradeForm').reset();$('date').value=today();$('symbol').value='XAUUSD';$('direction').value='Buy'}showToast('Form dikosongkan')});
+$('cancelEditBtn').addEventListener('click',()=>{resetForm();switchView('trades')});
+function editTrade(id){const t=trades.find(x=>x.id===id);if(!t)return;editingId=id;switchView('add');$('formTitle').textContent='Edit trade';$('saveTradeBtn').textContent='Simpan perubahan';$('cancelEditBtn').style.display='inline-block';Object.keys(t).forEach(k=>{const el=$(k);if(el&&el.type!=='file')el.value=Array.isArray(t[k])?t[k].join(', '):(t[k]??'')})}
+function result(t){return num(t.pl)>0?'win':num(t.pl)<0?'loss':'be'}
+function resultPill(t){const r=result(t);return `<span class="pill ${r}">${r==='win'?'WIN':r==='loss'?'LOSS':'BREAK-EVEN'}</span>`}
+function tableHTML(list){if(!list.length)return '<div class="empty">Belum ada trade yang cocok. Tambahkan trade pertama untuk mulai membangun jurnal.</div>';return `<div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Instrumen</th><th>Arah</th><th>Strategi</th><th>P/L</th><th>Hasil</th><th>Aksi</th></tr></thead><tbody>${list.map(t=>`<tr><td>${escapeHtml(t.date)}</td><td><b>${escapeHtml(t.symbol)}</b></td><td>${escapeHtml(t.direction)}</td><td>${escapeHtml(t.strategy||'—')}</td><td class="${num(t.pl)>0?'green':num(t.pl)<0?'red':''}">${money(t.pl)}</td><td>${resultPill(t)}</td><td><button class="btn small" data-detail="${t.id}">Detail</button> <button class="btn small" data-edit="${t.id}">Edit</button> <button class="btn small danger" data-delete="${t.id}">Hapus</button></td></tr>`).join('')}</tbody></table></div>`}
+function bindTradeActions(root){root.querySelectorAll('[data-detail]').forEach(b=>b.addEventListener('click',()=>showDetail(b.dataset.detail)));root.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>editTrade(b.dataset.edit)));root.querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',()=>deleteTrade(b.dataset.delete)))}
+function deleteTrade(id){const t=trades.find(x=>x.id===id);if(!t)return;if(!confirm(`Hapus trade ${t.symbol} tanggal ${t.date}? Tindakan ini tidak bisa dibatalkan.`))return;trades=trades.filter(x=>x.id!==id);save();renderAll();showToast('Trade dihapus')}
+function showDetail(id){const t=trades.find(x=>x.id===id);if(!t)return;const rows=[['Tanggal',t.date],['Instrumen',t.symbol],['Arah',t.direction],['Sesi',t.session],['Entry',t.entry],['Exit',t.exit],['Stop-loss',t.sl],['Take-profit',t.tp],['Lot',t.lot],['Risiko rencana',t.risk==null?'—':money(t.risk)],['P/L bersih',money(t.pl)],['Biaya',t.fees==null?'—':money(t.fees)],['Strategi',t.strategy],['Timeframe',t.timeframe],['Emosi',t.emotion],['Patuh rencana',t.rule],['Kondisi berita',t.news],['Alasan entry',t.reason],['Evaluasi',t.review],['Tag',(t.tags||[]).join(', ')]];
+$('detailContent').innerHTML=`<div style="margin-bottom:12px">${resultPill(t)} <strong style="margin-left:8px" class="${num(t.pl)>0?'green':num(t.pl)<0?'red':''}">${money(t.pl)}</strong></div><div class="mini-grid">${rows.map(([k,v])=>`<div class="mini"><span>${escapeHtml(k)}</span><div style="margin-top:5px;overflow-wrap:anywhere;font-size:13px">${escapeHtml(v==null||v===''?'—':v)}</div></div>`).join('')}</div><div class="form-actions"><button class="btn primary" id="detailEdit">Edit trade</button><button class="btn danger" id="detailDelete">Hapus trade</button></div>`;
+$('detailBackdrop').classList.add('show');$('detailEdit').addEventListener('click',()=>{$('detailBackdrop').classList.remove('show');editTrade(id)});$('detailDelete').addEventListener('click',()=>{$('detailBackdrop').classList.remove('show');deleteTrade(id)})}
+$('closeDetailBtn').addEventListener('click',()=>$('detailBackdrop').classList.remove('show'));
+$('detailBackdrop').addEventListener('click',e=>{if(e.target===$('detailBackdrop'))$('detailBackdrop').classList.remove('show')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('detailBackdrop').classList.remove('show')});
+['filterSearch','filterResult','filterFrom','filterTo'].forEach(id=>$(id).addEventListener('input',renderTradeTable));
+function filteredTrades(){const q=$('filterSearch').value.trim().toLowerCase(),r=$('filterResult').value,from=$('filterFrom').value,to=$('filterTo').value;return [...trades].filter(t=>(!q||[t.symbol,t.strategy,t.reason,(t.tags||[]).join(' ')].join(' ').toLowerCase().includes(q))&&(!r||result(t)===r)&&(!from||t.date>=from)&&(!to||t.date<=to)).sort((a,b)=>b.date.localeCompare(a.date)||String(b.createdAt||'').localeCompare(String(a.createdAt||'')))}
+function renderTradeTable(){$('tradeTable').innerHTML=tableHTML(filteredTrades());bindTradeActions($('tradeTable'))}
+function renderRecent(){const list=[...trades].sort((a,b)=>b.date.localeCompare(a.date)||String(b.createdAt||'').localeCompare(String(a.createdAt||''))).slice(0,5);$('recentTrades').innerHTML=tableHTML(list);bindTradeActions($('recentTrades'))}
+function stats(){const wins=trades.filter(t=>num(t.pl)>0),losses=trades.filter(t=>num(t.pl)<0),bes=trades.filter(t=>num(t.pl)===0),gp=wins.reduce((s,t)=>s+num(t.pl),0),gl=Math.abs(losses.reduce((s,t)=>s+num(t.pl),0)),net=trades.reduce((s,t)=>s+num(t.pl),0),avg=trades.length?net/trades.length:0,validR=trades.filter(t=>num(t.risk)>0),avgR=validR.length?validR.reduce((s,t)=>s+num(t.pl)/num(t.risk),0)/validR.length:null;return {wins,losses,bes,gp,gl,net,avg,pf:gl>0?gp/gl:null,winRate:trades.length?wins.length/trades.length*100:0,best:trades.length?Math.max(...trades.map(t=>num(t.pl))):0,worst:trades.length?Math.min(...trades.map(t=>num(t.pl))):0,avgR}}
+function setText(id,v){$(id).textContent=v}
+function renderStats(){const s=stats();setText('statNet',money(s.net));$('statNet').className='stat-value '+(s.net>0?'green':s.net<0?'red':'');setText('statWin',s.winRate.toFixed(1)+'%');setText('statWinSub',`${s.wins.length} win • ${s.losses.length} loss • ${s.bes.length} BE`);setText('statCount',trades.length);setText('statPF',s.pf===null?'—':s.pf.toFixed(2));setText('grossProfit',money(s.gp));setText('grossLoss',money(-s.gl));setText('avgPL',money(s.avg));setText('avgR',s.avgR===null?'—':s.avgR.toFixed(2)+'R');setText('bestTrade',money(s.best));setText('worstTrade',money(s.worst));setText('aWins',s.wins.length);setText('aLosses',s.losses.length);setText('aBE',s.bes.length);setText('aExp',money(s.avg));renderGroupStats('symbolStats',t=>t.symbol||'Tidak diketahui');renderGroupStats('strategyStats',t=>t.strategy||'Belum diberi strategi')}
+function renderGroupStats(id,keyFn){const groups={};trades.forEach(t=>{const k=keyFn(t);(groups[k] ||= []).push(t)});const entries=Object.entries(groups).sort((a,b)=>b[1].reduce((s,t)=>s+num(t.pl),0)-a[1].reduce((s,t)=>s+num(t.pl),0));if(!entries.length){$(id).innerHTML='<div class="empty">Belum ada data untuk dianalisis.</div>';return}$(id).innerHTML=entries.map(([k,arr])=>{const net=arr.reduce((s,t)=>s+num(t.pl),0),wins=arr.filter(t=>num(t.pl)>0).length,wr=arr.length?wins/arr.length*100:0;return `<div style="padding:10px 0;border-bottom:1px solid #27334a"><div style="display:flex;justify-content:space-between;gap:8px"><b>${escapeHtml(k)}</b><b class="${net>0?'green':net<0?'red':''}">${money(net)}</b></div><div class="muted" style="font-size:11px;margin-top:4px">${arr.length} trade • win rate ${wr.toFixed(0)}%</div></div>`}).join('')}
+function drawChart(){const c=$('equityChart');if(!c)return;const rect=c.getBoundingClientRect(),dpr=window.devicePixelRatio||1,w=Math.max(260,rect.width),h=190;c.width=w*dpr;c.height=h*dpr;const ctx=c.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);const sorted=[...trades].sort((a,b)=>a.date.localeCompare(b.date)||String(a.createdAt||'').localeCompare(String(b.createdAt||'')));if(!sorted.length){ctx.fillStyle='#9ba9c4';ctx.font='13px system-ui';ctx.textAlign='center';ctx.fillText('Catat trade untuk melihat grafik',w/2,h/2);return}let vals=[0],sum=0;sorted.forEach(t=>{sum+=num(t.pl);vals.push(sum)});let min=Math.min(...vals),max=Math.max(...vals);if(min===max){min-=1;max+=1}const pad={l:12,r:12,t:16,b:22},cw=w-pad.l-pad.r,ch=h-pad.t-pad.b;ctx.strokeStyle='#27334b';ctx.lineWidth=1;for(let i=0;i<4;i++){let y=pad.t+ch*i/3;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke()}const points=vals.map((v,i)=>({x:pad.l+cw*i/(vals.length-1),y:pad.t+ch-(v-min)/(max-min)*ch}));ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle='#f5c451';ctx.lineWidth=2.5;ctx.stroke();ctx.lineTo(points[points.length-1].x,pad.t+ch);ctx.lineTo(points[0].x,pad.t+ch);ctx.closePath();ctx.fillStyle='#f5c45118';ctx.fill();ctx.fillStyle='#9ba9c4';ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillText(money(max),pad.l,pad.t-3);ctx.fillText(money(min),pad.l,pad.t+ch+15);ctx.fillStyle='#f5c451';points.slice(-1).forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill()})}
+const pre=[['Punya setup dan alasan entry yang jelas','Entry harus sesuai aturan tertulis, bukan karena takut ketinggalan.'],['Cek kalender ekonomi','Ketahui jadwal berita berdampak tinggi dan risiko volatilitas.'],['Tentukan stop-loss dan risiko sebelum entry','Jangan memperlebar risiko hanya untuk menghindari realisasi loss.'],['Rasio risiko dan target masuk akal','Hitung berdasarkan strategi yang sudah diuji, bukan angka wajib.'],['Kondisi emosi cukup stabil','Jika marah, panik, lelah, atau ingin balas dendam, jangan memaksakan entry.'],['Tidak melanggar batas risiko pribadi','Jika batas tercapai, berhenti sesuai rencana.']];
+const post=[['Catat entry, exit, dan P/L bersih','Pastikan nilai menggunakan mata uang yang sama dan biaya dihitung konsisten.'],['Simpan screenshot chart bila tersedia','Tambahkan konteks untuk evaluasi; screenshot tidak wajib untuk menyimpan trade.'],['Nilai kepatuhan pada rencana','Pisahkan trade bagus yang rugi dari trade buruk yang kebetulan profit.'],['Tulis pelajaran utama','Satu pelajaran spesifik lebih berguna daripada menyalahkan diri sendiri.'],['Periksa emosi dan keputusan','Cari tanda FOMO, revenge trade, atau entry tanpa konfirmasi.'],['Tutup sesi sesuai aturan','Jangan mengejar kerugian atau memaksakan trade tambahan.']];
+function renderChecks(){const saved=JSON.parse(localStorage.getItem(CHECK_KEY)||'{}');[['preChecks',pre,'pre'],['postChecks',post,'post']].forEach(([id,arr,prefix])=>{$(id).innerHTML=arr.map((x,i)=>`<label class="checkitem"><input type="checkbox" data-check="${prefix}-${i}" ${saved[prefix+'-'+i]?'checked':''}><span><strong>${escapeHtml(x[0])}</strong><small>${escapeHtml(x[1])}</small></span></label>`).join('')});document.querySelectorAll('[data-check]').forEach(c=>c.addEventListener('change',()=>{const all={};document.querySelectorAll('[data-check]').forEach(x=>all[x.dataset.check]=x.checked);localStorage.setItem(CHECK_KEY,JSON.stringify(all))}));$('personalRules').value=localStorage.getItem(RULE_KEY)||''}
+$('clearChecksBtn').addEventListener('click',()=>{if(!confirm('Reset semua centang checklist?'))return;localStorage.removeItem(CHECK_KEY);renderChecks();showToast('Checklist direset')});
+$('saveRulesBtn').addEventListener('click',()=>{localStorage.setItem(RULE_KEY,$('personalRules').value);showToast('Aturan pribadi disimpan')});
+function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportBackup(){const data={app:'Jurnal Trading Pro',version:2,exportedAt:new Date().toISOString(),currency,trades,checks:JSON.parse(localStorage.getItem(CHECK_KEY)||'{}'),rules:localStorage.getItem(RULE_KEY)||''};download('backup-jurnal-trading-'+today()+'.json',JSON.stringify(data,null,2),'application/json');showToast('Backup JSON disiapkan')}
+function csvCell(v){let s=String(v??'');if(/[",\n\r]/.test(s))s='"'+s.replace(/"/g,'""')+'"';return s}
+function exportCSV(){const fields=['date','symbol','direction','session','entry','exit','sl','tp','lot','risk','pl','fees','strategy','timeframe','emotion','rule','news','reason','review','tags'];const rows=[fields.join(','),...trades.map(t=>fields.map(f=>csvCell(Array.isArray(t[f])?t[f].join('; '):t[f])).join(','))];download('riwayat-trading-'+today()+'.csv','\ufeff'+rows.join('\r\n'),'text/csv;charset=utf-8');showToast('CSV disiapkan')}
+$('importFile').addEventListener('change',async e=>{const file=e.target.files&&e.target.files[0];if(!file)return;try{const d=JSON.parse(await file.text());if(!d||!Array.isArray(d.trades))throw new Error('Format backup tidak valid');if(!confirm(`Impor ${d.trades.length} trade? Data saat ini akan diganti.`)){e.target.value='';return}trades=d.trades.filter(t=>t&&t.id&&t.date&&t.symbol).map(t=>({...t,pl:num(t.pl)}));if(d.currency&&['IDR','USD','MYR','SGD','EUR'].includes(d.currency))currency=d.currency;localStorage.setItem(STORAGE_KEY,JSON.stringify(trades));localStorage.setItem(PREF_KEY,JSON.stringify({currency}));if(d.checks)localStorage.setItem(CHECK_KEY,JSON.stringify(d.checks));if(typeof d.rules==='string')localStorage.setItem(RULE_KEY,d.rules);$('currency').value=currency;renderAll();showToast('Backup berhasil dipulihkan')}catch(err){showToast('Gagal impor: file JSON tidak valid atau rusak')}e.target.value=''});
+$('clearDataBtn').addEventListener('click',()=>{if(!confirm('Yakin ingin menghapus SEMUA trade dan data jurnal dari browser ini? Ekspor backup dahulu jika perlu.'))return;if(!confirm('Konfirmasi terakhir: tindakan ini tidak bisa dibatalkan. Hapus semua data?'))return;trades=[];localStorage.removeItem(STORAGE_KEY);localStorage.removeItem(CHECK_KEY);localStorage.removeItem(RULE_KEY);renderChecks();renderAll();showToast('Semua data jurnal dihapus')});
+function renderAll(){renderStats();renderRecent();renderTradeTable();drawChart()}
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(drawChart,120)});
+if(navigator.storage && navigator.storage.persist){navigator.storage.persist().catch(()=>{});}
+load().then(()=>{$('date').value=today();renderChecks();renderAll();}).catch(()=>{ $('date').value=today();renderChecks();renderAll(); });
+if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')) {
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+})();
+</script>
+</body>
+</html>
